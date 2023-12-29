@@ -4,9 +4,9 @@ import random
 
 import jwt
 
-from back.app.settings import settings
+from app.settings import settings
 
-from back.app.auth.schemas import User
+from app.auth.schemas import User
 
 
 def generate_token(length: int = 24) -> str:

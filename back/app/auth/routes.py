@@ -5,14 +5,14 @@ import httpx
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from back.app.settings import settings
-from back.app.database import get_db
+from app.settings import settings
+from app.database import get_db
 
-from back.app.auth.schemas import Url, AuthorizationResponse, GithubUser, User, Token
-from back.app.auth.helpers import generate_token, create_access_token
-from back.app.auth.crud import get_user_by_login, create_user, get_user
-from back.app.auth.dependencies import get_user_from_header
-from back.app.auth.models import User as DbUser
+from app.auth.schemas import Url, AuthorizationResponse, GithubUser, User, Token
+from app.auth.helpers import generate_token, create_access_token
+from app.auth.crud import get_user_by_login, create_user, get_user
+from app.auth.dependencies import get_user_from_header
+from app.auth.models import User as DbUser
 
 LOGIN_URL = "https://github.com/login/oauth/authorize"
 REDIRECT_URL = f"{settings.app_url}/auth/github"

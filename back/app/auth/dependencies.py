@@ -3,9 +3,9 @@ from fastapi import Header, HTTPException, status
 from fastapi.security.utils import get_authorization_scheme_param
 from pydantic import ValidationError
 
-from back.app.settings import settings
+from app.settings import settings
 
-from back.app.auth.schemas import User
+from app.auth.schemas import User
 
 
 def get_user_from_header(*, authorization: str = Header(None)) -> User:
